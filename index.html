@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>SalvatorSahagun.com: A Lifestyle, Current Events, and Entrepuership Blog.</title>
+  <script src="https://unpkg.com/react@15.3.2/dist/react.js"></script>
+  <script src="https://unpkg.com/react-dom@15.3.2/dist/react-dom.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+  <script src="https://npmcdn.com/react-router@2.4.0/umd/ReactRouter.min.js"></script>
+
+  <style>
+  body{
+    background-color: rgba(228,243,247,1);
+    padding: 20px;
+    margin: 0;
+
+  }
+
+  h1, h2, p, ul, li, {
+    font-family: Helvetica, Arial, sans-serif;
+  }
+  ul.header li{
+    display: inline;
+    list-style-type: none;
+    margin: 0;
+  }
+  ul.header{
+    background-color: #111;
+    padding: 0;
+  }
+  ul.header li a{
+    color: #FFF;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 20px;
+    display: inline-block;
+  }
+  .content{
+    background-color: #FFF;
+    padding: 20px;
+  }
+  .content h2{
+    padding: 0;
+    margin: 0;
+  }
+
+  .content li{
+    margin-bottom: 10px;
+  }
+
+  .active{
+    background-color: #0099FF;
+  }
+
+  </style>
+
+</head>
+
+<body>
+  <div id= "container">
+
+  </div>
+
+  <script type = "text/babel">
+  var {
+    Router,
+    Route,
+    IndexRoute,
+    IndexLink,
+    Link,
+  }   = ReactRouter;
+
+  var destination = document.querySelector("#container");
+  var AboutMe = React.createClass({
+    render: function() {
+        return(
+          <div>
+            <h2>About Me</h2>
+            <p> Hey guys! My name is Salvator Sahagun. I am a Seattle resident with lots of fun thoughts, and ideas.
+            That is why I started this blog to share these thoughts with the world.  There is not time like the present
+            and we live in one of the greatest eras in human development. Never has so much oppurtunity been presented before us.
+            It is my sincerest desire that you all follow this blog and learn alot from my adventures and failures!
+            </p>
+          </div>
+        );
+    }
+  });
+
+  var CurrentEvents = React.createClass({
+        render: function(){
+            return(
+          <div>
+            <h2>Current Events</h2>
+            <p> The moment is important. While Issac Newton believed that knowlege without application to be useless.
+            It is hard to ignore everything going on in regards to domestic, and international affairs.  The first article I
+            intend to write about is the game changing 2016 presidential election. We also intend to write about Technology, Entertainment, and Sports.
+            </p>
+          </div>
+            )
+        }
+  });
+
+  var Lifestyle = React.createClass({
+    render: function(){
+      return(
+        <div>
+        <h2> Lifestyle </h2>
+        <p>Lifestyle is something I am very passionate about. It is one of those things that everyone can talk about
+         </p>
+        <ul>
+            <li><i>Culinary Arts</i>:<p> Food is universal, yet style is so diverse. This section is where we will
+            explore the complex and diverse world of food. European, Oriental, African, Latin American, and fusion we
+            are here explore this thing we do with our hands and mouth.</p></li>
+            <li><i>Spirits, Wine and Beer</i>:<p>The world of alcohol is unlike any other narcotic. Each distillery, brewery, or winery
+             has history. The products are held together by style and tradition. As we know tradition is the core building block
+             of any civilzation or culture. </p></li>
+            <li><i>Cinema</i>:</li><p>Originally words painted pictures in our head. Thanks to Thomas Edison, we now have motion pictures.
+            Movies have done for the fine arts, what Mixed Martial Arts has done for Combat Sports. No art combines words, colors and music
+            so beautifully the way movies do.</p>
+            <li><i>Literature</i>:<p>The foundation of any society is literature. From Illiad in Greece to Fifty Shades of Grey in Seattle.
+            Literature is one of the great arts of our time and a wonderful reflection of human life. Pyscology tells us that the heroes we idolize as children shape the personalitys we develop as adults.
+            Alexander the Great was the boy who loved Achilles, He traveled East and died grief strucked from his lover. Emma Watson loved the bookish Belle from Beauty and the Beast, went on to play Hermoine Granger and Belle in live action. </p></li>
+        </ul>
+        </div>
+      );
+    }
+  });
+
+  var Ventures = React.createClass({
+      render: function(){
+          return(
+            <div>
+            <h2>Ventures</h2>
+            <p>While I am young and ambitous, I need to make moves.  This section of the blog will be to focus on my entrepreneurial endeavours.
+             </p>
+            <ul>
+                <li>New.type Labs</li>
+                <li>LeBonBoutique.com</li>
+                <li>Ouut</li>
+            </ul>
+            </div>
+          );
+      }
+  });
+  var Contact = React.createClass({
+      render: function(){
+            return(
+              <div>
+              <h2> Contact  Me</h2>
+              <form action = "action_handler.php" mathod = "post">
+              <p>First Name:
+              <input type = "text" name = "First_Name" placeholder ="FirstName" size="15" maxlength="30" />
+              </p>
+              <p>Last Name:
+              <input type = "text" name = "Last_Name"  placeholder ="Last Name" size="15" maxlength="30" />
+              </p>
+              <p>Email Address:
+              <input type = "text" name = "Email_Address" placeholder = "Email" size="15" maxlength="30" />
+              </p>
+              <p>Phone Number:
+              <input type = "text" name = "Phone_Number" placeholder = "Phone" size="15" maxlength="30" />
+              </p>
+              <p>Write a message to me here:</p>
+              <textarea name="Comments" name = "Message" cols="30" rows="5"></textarea>
+              <p><input type = "Submit" name ="Submit" value = "Submit" id="Submit"/></p>
+              <p><input type = "Reset" name = "Reset" value = "Reset" id = "Reset" /></p>
+              </form>
+              </div>
+
+          );
+      }
+  });
+  var App = React.createClass({
+    render: function() {
+      return(
+        <div>
+         <h1>Salvator Sahagun</h1>
+         <ul className = "header">
+              <li><IndexLink to="/" activeClassName = "active">About Me</IndexLink></li>
+              <li><Link to="/CurrentEvents" activeClassName = "active">Current Events</Link></li>
+              <li><Link to="/Lifestyle" activeClassName = "active">Lifestyle</Link></li>
+              <li><Link to="/Ventures" activeClassName = "active">Ventures</Link></li>
+              <li><Link to="/Contact" activeClassName = "active">Contact</Link></li>
+          </ul>
+        <div className="content">
+          {this.props.children}
+        </div>
+      </div>
+        )
+     }
+  });
+
+  ReactDOM.render(
+    <Router>
+      <Route path = "/" component={App}>
+        <IndexRoute component = {AboutMe}/>
+      <Route path = "/CurrentEvents" component = {CurrentEvents}/>
+      <Route path = "/Lifestyle" component = {Lifestyle}/>
+      <Route path = "/Ventures" component = {Ventures}/>
+      <Route path = "/Contact" component = {Contact}/>
+      </Route>
+    </Router>,
+   destination
+  );
+
+   </script>
+</body>
+
+</html>
